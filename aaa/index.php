@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{ 
+			background:url(./aaa/1.jpg) no-repeat left top;
+		}
+		.txt{
+			width:350px; height:200px; margin:0px auto; padding:30px 30px;
+			background:rgba(255, 255, 255, 0.2)!important;
+			filter:Alpha(opacity=60); background:#fff; /*　使用IE专属滤镜实现IE背景透明*/ 
+			font-size: 20px;color:#333;
+		}
+		.dj{
+			background:rgba(255, 255, 255, 0.2)!important; 
+			width: 60px;height: 30px;
+		}
+
+	</style>
+</head>
+<body>
+	<br/><br/>
+	<br/><br/>
+	<br/><br/>
+	<center>
+	<form action="./aaa/add.php" method="post">
+		<textarea name="text" class="txt"></textarea><br/><br/>
+		<input type="submit" class="dj">
+		<input type="reset" class="dj">
+	</form>
+	</center>
+</body>
+</html>

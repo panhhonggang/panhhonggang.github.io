@@ -1,0 +1,11 @@
+<?php
+	header("Content-Type:text/html;Charset=UTF-8");
+	date_default_timezone_set("PRC");
+	//配置文件
+	define('HOST','w.rdc.sae.sina.com.cn');//主机名
+	define('USER','2jlo1z5jk3');//用户名
+	define('PASS','x4w332j0hwz11k12z45xlh45j5xmx5kl1lii0x40');//密码
+	define('DBNAME','app_panhonggang');//数据库名
+	define('CHARSET','utf8');//字符集
+	define('PREFIX','');//数据表前缀
+	define('PAGENUM',5);//每页显示数据条数
