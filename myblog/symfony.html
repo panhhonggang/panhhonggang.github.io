@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="潘宏钢,PHP,MySQL,panhonggang,技术博客" />
+		<meta name="description" content="PHP集成开发工程师" />
+		<title>潘宏钢的博客</title>
+		<link href="./css/bootstrap.min.css" rel="stylesheet">
+		<style type="text/css">
+			#title{width:100%; height:200px; background:pink;}
+			#ss{font-size:42px; top:60px; position:absolute; left:80px;}
+			.form-group{position:absolute; left:700px; top:80px;}
+			.container{width:100%;}
+			.navbar-nav{margin-left:80px;}
+			.navbar-nav li{margin-left:50px;}
+			.column{margin-left:50px; border:1px solid #ddd;}
+			.span-i{font-family:微软雅黑,宋体; font-size:1em; color:#f00;}
+		</style>
+	</head>
+	<body>
+		<div id="title">
+			<span id="ss">潘宏钢的博客</span>
+			<form class="navbar-form navbar-left" role="search">
+				<div class="form-group">
+					<input class="form-control" type="text" />
+					<button type="submit" class="btn btn-default">搜索</button>
+				</div> 
+			</form>
+		</div>
+		<div class="container">
+			<div class="row clearfix">
+					<nav class="navbar navbar-default" role="navigation">
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+							<ul class="nav navbar-nav">
+								<li class="active">
+									 <a href="../index.html">首页</a>
+								</li>
+								<li>
+									 <a href="#">PHP</a>
+								</li>
+								<li>
+									 <a href="#">MySQL</a>
+								</li>
+								<li>
+									 <a href="#">微信开发</a>
+								</li>
+								<li>
+									 <a href="#">git</a>
+								</li>
+								<li>
+									 <a href="#">工具</a>
+								</li>
+								<li>
+									 <a href="#">杂谈</a>
+								</li>
+							</ul>
+						</div>
+					</nav>
+			</div>
+			<div class="row clearfix">
+				<div class="col-md-7 column">
+					<h2>
+						PHP-symfony框架搭建
+					</h2>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><font size="4">作者：潘宏钢</font></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<span><font size="4">时间：2016年12月16日</font></span>
+					<br>
+					<hr>
+						<div class="post-body">
+								<span class="span-i">
+									<i>为了让创建新程序更加简单，Symfony提供了一个安装器，下载它就是你的第一步。</i>
+								</span>
+							<h3>安装Symfony Installer</h3>
+								<p>☆安装器需要php5.4或更高。如果你仍然在使用遗产级的php5.3，你不能使用Symfony安装器。</p>
+								<span class="span-i">
+									<i>如果你使用的是安装环境的打包解决方案，比如WAMP，XAMP或MAMP，请检查它们是否采用了PHP近期版本。你可以在命令行中使用下述命令来查看PHP版本：</i>
+								</span>
+								<img src="./img/查看php版本.png" alt="">
+								<p>根据操作系统的不同，Symfony安装器的安装方式也有所不同。</p>
+							
+							<h3>Linux和MAC OS X系统</h3>
+								<p>打开命令行工具执行下述命令：</p>
+								<img src="./img/linux.png" alt="">
+								<p>这将创建一个全局的Symfony命令到你的系统上。</p>
+							
+							<h3>Windows系统</h3>
+								<p>在Windows上，执行下述命令：</p>
+								<img src="./img/win.png" alt="">
+								<p>它会下载一个symfony文件，然后把这文件移动到你想创建Symfony项目的文件夹里，通过下述命令可引导各种安装：</p>
+								<img src="./img/win移动.png" alt="">
+
+							<h3>创建Symfony程序</h3>
+								<p>当Symfony安装器被设置好之后，使用全新命令new来创建Symfony项目：</p>
+								<img src="./img/创建symfony项目.png" alt="">
+								<p>这命令创建了一个新的my_project_name目录，里面是一个基于最新稳定版Symfony程序的新项目。除此之外，安装器还会检查你的系统是否具备了执行Symfony程序的技术需求。若不满足，你会看到一个“哪些地方还需改变”的需求列表。</p>
+							<hr>
+								<span class="span-i">
+									<i>如果安装器不工作或是不输出任何内容，确保你的系统已经安装并开启了phar扩展。</i>
+								</span>
+							<hr>
+
+							<h3>运行Symfony</h3>
+								<p>在开发时，Symfony利用了PHP内置的web服务器。因此，运行Symfony程序关乎项目所在目录并执行如下命令：</p>
+								<img src="./img/启动.png" alt="">
+								<p>然后，打开浏览器访问http://localhost:8000/链接，即可看到Symfony欢迎页：</p>
+								<img src="./img/欢迎.jpg" alt="" width="680" height="400">
+								<p>除了欢迎页，你还可能看到空白页和错误页面，这通常是由于目录权限的错误配置造成的。根据你的操作系统，有若干解决方案。</p>
+								<span class="span-i">
+									<i>PHP内置服务器仅在php5.4和以上版本中存在。如果是老版PHP，你应该在操作系统的web server上针对Symfony项目配置虚拟主机（Virtual Host）。</i>
+								</span>
+								<span class="span-i">
+									<i>server:run命令只适合于开发阶段。</i>
+								</span>
+
+							<h3>检查Symfony运行环境的配置</h3>
+								<p>Symfony程序内置了一个服务器环境检查器，用来显示有关设置是否适合于Symfony。访问下面链接即可检查：</p>
+								<img src="./img/配置.png" alt="">
+								<p>如果显示有问题，在继续使用Symfony之前修复它们。</p>
+
+							<h3>更新Symfony程序</h3>
+								<p>至此，你已创建了可以立即投入开发的全功能Symfony项目。Symfony程序依赖的是大量外部类库，它们可以下载到vendor/目录下，并且被Composer进行排他管理。</p>
+								<p>频繁更新这些三方类库是最佳实践，可以防止bug和漏洞。执行Composer的update命令来一次性全部更新它们：</p>
+								<img src="./img/更新.png" alt="">
+								<p>根据项目复杂程度，这种更新方式需要耗费若干分钟才能完成。</p>
+								<span class="span-i">
+									<i>Symfony还提供了一个用于检查项目依赖是否包含了已知的重大安全漏洞的命令：</i>
+									<img src="./img/检查依赖.png" alt=""><br>
+									<i>定期执行此命令是一个好习惯，因为可以尽可能快地更新或替换掉那些免疫低下的依赖。</i>
+								</span>
+							<hr>
+							<p>试着搭建一下吧！</p>
+							<a href="http://www.symfonychina.com/" target="_blank">symfony中国官方网站</a><hr>
+							<a href="http://www.cnblogs.com/Seekr/tag/Symfony2/" target="_blank">博客园symfony学习笔记</a>
+							<br><br>
+							<hr>
+							<br>
+							<br>
+
+
+						</div>	
+				</div>
+
+				<div class="col-md-4 column">
+					<h3>博文链接</h3>
+					<ul>
+						<li>
+							<a href="./gd.html" target="_blank">GD库函数使用</a>
+						</li>
+						<li>
+							<a href="./git.html" target="_blank">图型化git使用及git服务器搭建</a>
+						</li>
+						<li>
+							<a href="./MySQL-01.html" target="_blank">MySQL之体系结构</a>
+						</li>
+						<li>
+							<a href="./MySQL-02.html" target="_blank">MySQL数据库引擎之MyISAM</a>
+						</li>
+						<li>
+							<a href="./MySQL-03.html" target="_blank">MySQL数据库引擎之InnoDB</a>
+						</li>
+						<li>
+							<a href="./MySQL-04.html" target="_blank">MySQL数据库引擎之CSV</a>
+						</li>
+						<li>
+							<a href="./PHP-MySQL操作.html" target="_blank">PHP-MySQL操作</a>
+						</li>
+						<li>
+							<a href="./symfony.html" target="_blank">PHP-symfony框架</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+	</body>
+</html>
