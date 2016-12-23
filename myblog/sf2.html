@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="潘宏钢,PHP,MySQL,panhonggang,技术博客" />
+		<meta name="description" content="PHP集成开发工程师" />
+		<title>潘宏钢的博客</title>
+		<link href="./css/bootstrap.min.css" rel="stylesheet">
+		<style type="text/css">
+			#title{width:100%; height:200px; background:pink;}
+			#ss{font-size:42px; top:60px; position:absolute; left:80px;}
+			.form-group{position:absolute; left:700px; top:80px;}
+			.container{width:100%;}
+			.navbar-nav{margin-left:80px;}
+			.navbar-nav li{margin-left:50px;}
+			.column{margin-left:50px; border:1px solid #ddd;}
+			.span-i{font-family:微软雅黑,宋体; font-size:1em; color:#f00;}
+		</style>
+	</head>
+	<body>
+		<div id="title">
+			<span id="ss">潘宏钢的博客</span>
+			<form class="navbar-form navbar-left" role="search">
+				<div class="form-group">
+					<input class="form-control" type="text" />
+					<button type="submit" class="btn btn-default">搜索</button>
+				</div> 
+			</form>
+		</div>
+		<div class="container">
+			<div class="row clearfix">
+					<nav class="navbar navbar-default" role="navigation">
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+							<ul class="nav navbar-nav">
+								<li class="active">
+									 <a href="../index.html">首页</a>
+								</li>
+								<li>
+									 <a href="#">PHP</a>
+								</li>
+								<li>
+									 <a href="#">MySQL</a>
+								</li>
+								<li>
+									 <a href="#">微信开发</a>
+								</li>
+								<li>
+									 <a href="#">git</a>
+								</li>
+								<li>
+									 <a href="#">工具</a>
+								</li>
+								<li>
+									 <a href="#">杂谈</a>
+								</li>
+							</ul>
+						</div>
+					</nav>
+			</div>
+			<div class="row clearfix">
+				<div class="col-md-7 column">
+					<h2>
+						symfony2 中的session和cookie
+					</h2>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><font size="4">作者：潘宏钢</font></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<span><font size="4">时间：2016年12月23日</font></span>
+					<br>
+					<hr>
+						<div class="post-body">
+								<p>symfony的session属于use Symfony\Component\HttpFoundation\Request旗下的一部分。明白了这一点就很好调用他了</p>
+								<h3>Session</h3>
+								<b>设置session</b>
+<pre>
+use Symfony\Component\HttpFoundation\Request;
+public function setSessionAction(Request $request) {
+	$session=$request->getSession(); //获取session对象
+	$session->set('name','value');//设置session
+}
+</pre>
+								<b>读取session</b>
+<pre>
+use Symfony\Component\HttpFoundation\Request;
+public function getSessionAction(Request $request) {
+      $session=$request->getSession(); //获取session对象
+      $session->get('name');//设置session
+      $session->clear(); //清除session
+}	
+</pre>
+								<b>在twig模板中使用</b>
+<pre>
+{{ app.session.get('name') }}
+</pre>
+								<h3>Cookie</h3>
+								<b>设置cookie</b>
+<pre>
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Cookie;
+ 
+public function setcookieAction()
+{
+     $response=new Response();
+     $response->headers->setCookie(new cookie('name', 'value', time() + 3600));
+     $response->send();
+     
+     //.......
+}
+</pre>
+								<b>获取cookie</b>
+<pre>
+use Symfony\Component\HttpFoundation\Request;
+ 
+public function getcookieAction(Request $request)
+{
+        $request->cookies->get('name');
+        
+        //.......
+ }
+</pre>
+								<b>清理cookie</b>
+<pre>
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Cookie;
+ 
+public function clearcookieAction()
+{
+     $response=new Response();
+     $response->headers->setCookie(new cookie('name', 'value', time() - 3600));
+     $response->send();
+     
+     //.......
+}
+</pre>
+								<b>在twig模板中使用</b>
+<pre>
+{{ app.request.cookies.get('name') }}
+</pre>
+							<br><br>
+							<hr>
+							<br>
+							<br>
+
+
+						</div>	
+				</div>
+
+				<div class="col-md-4 column">
+					<h3>博文链接</h3>
+					<ul>
+						<li>
+							<a href="./gd.html" target="_blank">GD库函数使用</a>
+						</li>
+						<li>
+							<a href="./git.html" target="_blank">图型化git使用及git服务器搭建</a>
+						</li>
+						<li>
+							<a href="./MySQL-01.html" target="_blank">MySQL之体系结构</a>
+						</li>
+						<li>
+							<a href="./MySQL-02.html" target="_blank">MySQL数据库引擎之MyISAM</a>
+						</li>
+						<li>
+							<a href="./MySQL-03.html" target="_blank">MySQL数据库引擎之InnoDB</a>
+						</li>
+						<li>
+							<a href="./MySQL-04.html" target="_blank">MySQL数据库引擎之CSV</a>
+						</li>
+						<li>
+							<a href="./PHP-MySQL操作.html" target="_blank">PHP-MySQL操作</a>
+						</li>
+						<li>
+							<a href="./symfony.html" target="_blank">PHP-symfony框架</a>
+						</li>
+						<li>
+							<a href="./sf2.html" target="_blank">symfony2 中的session和cookie</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+	</body>
+</html>
