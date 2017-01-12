@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="潘宏钢,PHP,MySQL,panhonggang,技术博客" />
+		<meta name="description" content="PHP集成开发工程师" />
+		<title>潘宏钢的博客</title>
+		<link href="./css/bootstrap.min.css" rel="stylesheet">
+		<style type="text/css">
+			#title{width:100%; height:200px; background:pink;}
+			#ss{font-size:42px; top:60px; position:absolute; left:80px;}
+			.form-group{position:absolute; left:700px; top:80px;}
+			.container{width:100%;}
+			.navbar-nav{margin-left:80px;}
+			.navbar-nav li{margin-left:50px;}
+			.column{margin-left:50px; border:1px solid #ddd;}
+			.span-i{font-family:微软雅黑,宋体; font-size:1em; color:#f00;}
+		</style>
+	</head>
+	<body>
+		<div id="title">
+			<span id="ss">潘宏钢的博客</span>
+			<form class="navbar-form navbar-left" role="search">
+				<div class="form-group">
+					<input class="form-control" type="text" />
+					<button type="submit" class="btn btn-default">搜索</button>
+				</div> 
+			</form>
+		</div>
+		<div class="container">
+			<div class="row clearfix">
+					<nav class="navbar navbar-default" role="navigation">
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+							<ul class="nav navbar-nav">
+								<li class="active">
+									 <a href="../index.html">首页</a>
+								</li>
+								<li>
+									 <a href="#">PHP</a>
+								</li>
+								<li>
+									 <a href="#">MySQL</a>
+								</li>
+								<li>
+									 <a href="#">微信开发</a>
+								</li>
+								<li>
+									 <a href="#">git</a>
+								</li>
+								<li>
+									 <a href="#">工具</a>
+								</li>
+								<li>
+									 <a href="#">杂谈</a>
+								</li>
+							</ul>
+						</div>
+					</nav>
+			</div>
+			<div class="row clearfix">
+				<div class="col-md-7 column">
+					<h2>
+						PHP是世界上最好的语言
+					</h2>
+					<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><font size="4">作者：潘宏钢</font></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+					<span><font size="4">时间：2017年1月12日</font></span>
+					<br>
+					<hr>
+						<div class="post-body">
+							<span>相信大家都知道网络爬虫，搜索引擎那些咱就不说了，不过大多数是用python所写，于是有phper不服！掏出咱们的 拍黄片 就上了</span>
+<pre style="font-size:4mm">
+&lt;?php
+//需在同级目录下新建文件夹  MM 
+for ($pageno = 1 ; $pageno < 1848; $pageno ++) {
+    $content = file_get_contents('http://www.haha.mx/topic/1/new/'.$pageno);
+    preg_match_all('/class=\"joke-main-img\" src=\"(.*?)\"/',$content,$matches);
+    foreach ($matches[1] as $url) {
+        $url = str_replace('small','big',$url);
+        $img = file_get_contents($url);
+        file_put_contents('./MM/'.basename($url),$img);
+    }
+}
+
+</pre>
+
+							<span>这样抓取资料是不是非常方便呢？比如视频文件、音乐文件等等</span>
+							<br><br>
+							<hr>
+							<br>
+							<br>
+
+
+						</div>	
+				</div>
+
+				<div class="col-md-4 column">
+					<h3>博文链接</h3>
+					<ul>
+						<li>
+							<a href="./gd.html" target="_blank">GD库函数使用</a>
+						</li>
+						<li>
+							<a href="./git.html" target="_blank">图型化git使用及git服务器搭建</a>
+						</li>
+						<li>
+							<a href="./MySQL-01.html" target="_blank">MySQL之体系结构</a>
+						</li>
+						<li>
+							<a href="./MySQL-02.html" target="_blank">MySQL数据库引擎之MyISAM</a>
+						</li>
+						<li>
+							<a href="./MySQL-03.html" target="_blank">MySQL数据库引擎之InnoDB</a>
+						</li>
+						<li>
+							<a href="./MySQL-04.html" target="_blank">MySQL数据库引擎之CSV</a>
+						</li>
+						<li>
+							<a href="./PHP-MySQL操作.html" target="_blank">PHP-MySQL操作</a>
+						</li>
+						<li>
+							<a href="./symfony.html" target="_blank">PHP-symfony框架</a>
+						</li>
+						<li>
+							<a href="./sf2.html" target="_blank">symfony2 中的session和cookie</a>
+						</li>
+						<li>
+							<a href="./sf3.html" target="_blank">symfony2 获取上传文件</a>
+						</li>
+						<li>
+							<a href="./good.html" target="_blank">PHP是世界上最好的语言</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+	</body>
+</html>
